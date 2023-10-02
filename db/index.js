@@ -38,4 +38,4 @@ const db = {
   },
 };
 
-export default db;
+export { db, pool };
