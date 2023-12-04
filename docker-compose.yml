@@ -23,5 +23,18 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+  nginx:
+    image: nginx:latest
+    command: /bin/bash -c "mkdir -p /etc/nginx/ssl/resume.alanjones.dev && nginx -g 'daemon off;'"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - /etc/nginx/ssl/resume.alanjones.dev/domain.cert.pem:/etc/nginx/ssl/resume.alanjones.dev/domain.cert.pem
+      - /etc/nginx/ssl/resume.alanjones.dev/private.key.pem:/etc/nginx/ssl/resume.alanjones.dev/private.key.pem
+      - /etc/nginx/ssl/resume.alanjones.dev/intermediate.cert.pem:/etc/nginx/ssl/resume.alanjones.dev/intermediate.cert.pem
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - app
 volumes:
   db:
