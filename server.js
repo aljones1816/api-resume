@@ -24,8 +24,8 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: "http://localhost:3000/api",
-      description: "Development server",
+      url: "https://resume.alanjones.dev/api/",
+      description: "Production Server",
     },
   ],
 };
