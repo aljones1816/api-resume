@@ -49,6 +49,7 @@ CREATE TABLE about (
     name VARCHAR(50),
     location VARCHAR(50),
     email VARCHAR(50),
+    portfolio VARCHAR(50),
     github VARCHAR(50),
     linkedin VARCHAR(50),
     objective VARCHAR(2000)

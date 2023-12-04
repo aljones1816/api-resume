@@ -26,6 +26,10 @@
  *                     type: string
  *                     description: My email address.
  *                     example: my@email.com
+ *                   portfolio:
+ *                     type: string
+ *                     description: My project portfolio website
+ *                     example: https://www.google.com
  *                   github:
  *                     type: string
  *                     description: My github profile url.

@@ -21,8 +21,6 @@ services:
     container_name: api-resume-postgres
     ports:
       - "5432:5432"
-    volumes:
-      - ./db/data:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: $POSTGRES_DB
       POSTGRES_USER: $POSTGRES_USER
