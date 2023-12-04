@@ -50,13 +50,13 @@ jobs:
           script: |
             export PORT=${{ secrets.PORT }}
             export POSTGRES_HOST=${{ secrets.POSTGRES_HOST }}
-            POSTGRES_USER=${{ secrets.POSTGRES_USER }}
-            POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
-            POSTGRES_DB=${{ secrets.POSTGRES_DB }}
-            POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}
-            POSTGRES_MAX=${{ secrets.POSTGRES_MAX }}
-            POSTGRES_IDLE_TIMEOUT=${{ secrets.POSTGRES_IDLE_TIMEOUT }}
-            POSTGRES_CONNECTION_TIMEOUT=${{ secrets.POSTGRES_CONNECTION_TIMEOUT }}
+            export POSTGRES_USER=${{ secrets.POSTGRES_USER }}
+            export POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
+            export POSTGRES_DB=${{ secrets.POSTGRES_DB }}
+            export POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}
+            export POSTGRES_MAX=${{ secrets.POSTGRES_MAX }}
+            export POSTGRES_IDLE_TIMEOUT=${{ secrets.POSTGRES_IDLE_TIMEOUT }}
+            export POSTGRES_CONNECTION_TIMEOUT=${{ secrets.POSTGRES_CONNECTION_TIMEOUT }}
             cd /home/deployuser/app
             docker-compose down
             docker-compose build --no-cache
