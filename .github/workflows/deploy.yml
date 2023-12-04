@@ -59,4 +59,5 @@ jobs:
             POSTGRES_CONNECTION_TIMEOUT=${{ secrets.POSTGRES_CONNECTION_TIMEOUT }}
             cd /home/deployuser/app
             docker-compose down
+            docker-compose build --no-cache
             docker-compose up -d
