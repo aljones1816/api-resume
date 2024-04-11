@@ -4,9 +4,6 @@ import { migrate } from "postgres-migrations";
 
 const Pool = pg.Pool;
 
-console.log("POSTGRES_USER:", process.env.POSTGRES_USER);
-console.log("POSTGRES_PASSWORD:", process.env.POSTGRES_PASSWORD);
-
 const pgconfig = {
   user: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,

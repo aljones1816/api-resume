@@ -37,7 +37,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           source: "."
-          target: "/home/deployuser/app"
+          target: "/home/${{ secrets.SERVER_USER }}/app"
 
       - name: SSH and Deploy
         uses: appleboy/ssh-action@master
@@ -57,7 +57,7 @@ jobs:
             export POSTGRES_MAX=${{ secrets.POSTGRES_MAX }}
             export POSTGRES_IDLE_TIMEOUT=${{ secrets.POSTGRES_IDLE_TIMEOUT }}
             export POSTGRES_CONNECTION_TIMEOUT=${{ secrets.POSTGRES_CONNECTION_TIMEOUT }}
-            cd /home/deployuser/app
+            cd /home/${{ secrets.SERVER_USER }}/app
             docker-compose down
             docker-compose build --no-cache
             docker-compose up -d
