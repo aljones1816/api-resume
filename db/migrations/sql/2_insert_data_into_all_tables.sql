@@ -14,11 +14,7 @@ INSERT INTO experience (employer, role, start_date, end_date, location, descript
     '2021-12-01',
     '2023-02-01',
     'Remote, ME',
-    'Developed Proof of Concept for an internal reporting tool, transitioning from a Google form to a robust client-application built in React with a Firebase backend.\nEngineered a CI/CD pipeline utilizing Python, Docker, and GitHub Actions, transitioning to a services
-architecture that enhanced deployment speed and operational stability.\nAutomated DDL and DML script generation for urgent data pipeline reconfigurations with Python,
-compressing a two-month manual process into less than two weeks, instrumental in avoiding >$1 million in
-vendor licensing fees.\nRefactored numerous critical and complex SQL data transformation queries from unreadable nested subqueries
-to modularized, readable, maintainable queries leveraging CTEs.'
+    'Developed Proof of Concept for an internal reporting tool, transitioning from a Google form to a robust client-application built in React with a Firebase backend.\nEngineered a CI/CD pipeline utilizing Python, Docker, and GitHub Actions, transitioning to a services architecture that enhanced deployment speed and operational stability.\nAutomated DDL and DML script generation for urgent data pipeline reconfigurations with Python, compressing a two-month manual process into less than two weeks, instrumental in avoiding >$1 million in vendor licensing fees.\nRefactored numerous critical and complex SQL data transformation queries from unreadable nested subqueries to modularized, readable, maintainable queries leveraging CTEs.'
   ),
   (
     'IDEXX',
@@ -26,12 +22,7 @@ to modularized, readable, maintainable queries leveraging CTEs.'
     '2023-02-01',
     NULL,
     'Remote, MA',
-    'Led the design and implementation of RESTful APIs to facilitate seamless data integration between our core
-data platform and external services, using Python and Flask, improving data accessibility.\nSpearheaded the integration of Datadog\'s APIs into our Python-based data pipeline, creating custom metrics
-and real-time dashboards for enhanced system health monitoring, leading to a 40% fewer downtime incidents.\nOptimized existing ELT processes by integrating Python multiprocessing and threading libraries, achieving a
-40% reduction in processing times and significantly improving throughput on critical data pipelines.\nPartnered with a cross-functional team on a pioneering ML project in Python, achieving a 30% reduction in
-costs by optimizing license utilization across the organization.\nUsed Python to automate the migration of legacy systems to cloud-based data warehouse, enabling higher data
-storage efficiency, better scalability, and reduced operational costs.'
+    'Led the design and implementation of RESTful APIs to facilitate seamless data integration between our core data platform and external services, using Python and Flask, improving data accessibility.\nSpearheaded the integration of Datadog''s APIs into our Python-based data pipeline, creating custom metrics and real-time dashboards for enhanced system health monitoring, leading to a 40% fewer downtime incidents.\nOptimized existing ELT processes by integrating Python multiprocessing and threading libraries, achieving a 40% reduction in processing times and significantly improving throughput on critical data pipelines.\nPartnered with a cross-functional team on a pioneering ML project in Python, achieving a 30% reduction in costs by optimizing license utilization across the organization.\nUsed Python to automate the migration of legacy systems to cloud-based data warehouse, enabling higher data storage efficiency, better scalability, and reduced operational costs.'
   );
 
 -- populate education table
@@ -100,10 +91,7 @@ INSERT INTO projects (name, url, repo, description, date) VALUES
         'GHCN Analysis',
         'NA',
         'https://github.com/aljones1816/GHCNV4_Analysis',
-        'Developed and implemented a Python-based data pipeline for extracting, cleaning, and transforming climate
-data from multiple sources (GISTEMP, CRUTEM, GHCN).\nDesigned and deployed a Flask-driven web application that serves an interactive dashboard, enabling users to
-select datasets dynamically and visualize temperature anomalies via Chart.js.\Employed best practices in software development, including organizing code for maintainability, using version
-control (Git), and ensuring the application\'s scalability and responsiveness to future data additions or changes.',
+        'Developed and implemented a Python-based data pipeline for extracting, cleaning, and transforming climate data from multiple sources (GISTEMP, CRUTEM, GHCN).\nDesigned and deployed a Flask-driven web application that serves an interactive dashboard, enabling users to select datasets dynamically and visualize temperature anomalies via Chart.js.\Employed best practices in software development, including organizing code for maintainability, using version control (Git), and ensuring the application''s scalability and responsiveness to future data additions or changes.',
         '2023-01-01'
     );
 
@@ -116,9 +104,7 @@ INSERT INTO about (name, location, email, portfolio, github, linkedin, objective
         'https://alanjones.dev',
         'https://github.com/aljones1816',
         'https://www.linkedin.com/in/almjones/',
-        'Seasoned engineer seeking role as a Full Stack Developer with a strong background in back and frontend technologies,
-end-to-end data intensive system design, and CI/CD integration. Eager to apply 5+ years of software engineering
-experience to build dynamic, engaging user experiences.'
+        'Seasoned engineer seeking role as a Full Stack Developer with a strong background in back and frontend technologies, end-to-end data intensive system design, and CI/CD integration. Eager to apply 5+ years of software engineering experience to build dynamic, engaging user experiences.'
     );
 
 -- populate user messages table
