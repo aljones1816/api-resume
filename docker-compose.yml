@@ -12,7 +12,8 @@ services:
       POSTGRES_IDLE_TIMEOUT: $POSTGRES_IDLE_TIMEOUT
       POSTGRES_CONNECTION_TIMEOUT: $POSTGRES_CONNECTION_TIMEOUT
     depends_on:
-      - db
+      - db:
+        condition: service_healthy
     networks:
       - backend
 
