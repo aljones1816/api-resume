@@ -2,52 +2,53 @@ version: "3"
 services:
   app:
     build: .
-    ports:
-      - 3000:3001
     environment:
       POSTGRES_DB: $POSTGRES_DB
       POSTGRES_USER: $POSTGRES_USER
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
-      POSTGRES_HOST: $POSTGRES_HOST
+      POSTGRES_HOST: db # Use the internal service name for DB connection
       POSTGRES_PORT: $POSTGRES_PORT
       POSTGRES_MAX: $POSTGRES_MAX
       POSTGRES_IDLE_TIMEOUT: $POSTGRES_IDLE_TIMEOUT
       POSTGRES_CONNECTION_TIMEOUT: $POSTGRES_CONNECTION_TIMEOUT
     depends_on:
-      db:
-        condition: service_healthy
+      - db
+    networks:
+      - backend
+
   db:
     image: postgres:latest
     container_name: api-resume-postgres
-    ports:
-      - "5432:5432"
     environment:
       POSTGRES_DB: $POSTGRES_DB
       POSTGRES_USER: $POSTGRES_USER
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
-      POSTGRES_HOST: $POSTGRES_HOST
-      POSTGRES_PORT: $POSTGRES_PORT
-      POSTGRES_MAX: $POSTGRES_MAX
-      POSTGRES_IDLE_TIMEOUT: $POSTGRES_IDLE_TIMEOUT
-      POSTGRES_CONNECTION_TIMEOUT: $POSTGRES_CONNECTION_TIMEOUT
-
+    networks:
+      - backend
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER"]
       interval: 5s
       timeout: 5s
       retries: 5
+
   nginx:
     image: nginx:latest
-    command: /bin/bash -c "mkdir -p /etc/nginx/ssl/resume.alanjones.dev && nginx -g 'daemon off;'"
+    ports:
+      - "80:80"
+      - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - /etc/nginx/ssl/resume.alanjones.dev/domain.cert.pem:/etc/nginx/ssl/resume.alanjones.dev/domain.cert.pem
       - /etc/nginx/ssl/resume.alanjones.dev/private.key.pem:/etc/nginx/ssl/resume.alanjones.dev/private.key.pem
       - /etc/nginx/ssl/resume.alanjones.dev/intermediate.cert.pem:/etc/nginx/ssl/resume.alanjones.dev/intermediate.cert.pem
-    ports:
-      - "80:80"
-      - "443:443"
     depends_on:
       - app
-volumes:
-  db:
+    networks:
+      - backend
+      - frontend
+
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
